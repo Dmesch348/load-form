@@ -39,12 +39,7 @@ button:hover { opacity: .9; }
 
 <div>
 <label>Name</span></label>
-<input name="Name" required autocomplete="name" />
-</div>
-
-<div>
-<label>Truck Number</label>
-<input name="Truck Number" />
+<input name="Name" />
 </div>
 
 <div>
@@ -119,6 +114,11 @@ button:hover { opacity: .9; }
 <fieldset>
 <legend>Truck (Required)</legend>
 <div class="grid grid-4">
+
+<div>
+<label>Truck Number <span class="req">*</span>*</label>
+<input name="Truck Number" required />
+</div>
 
 <div>
 <label>Truck Year <span class="req">*</span></label>
