@@ -27,18 +27,35 @@ button:hover { opacity: .9; }
 <h1>Driver Load Details</h1>
 
 <form action="https://script.google.com/macros/s/AKfycbxd49k4KNXDe3ub0V9QuDgwtRHJJt3c-Hc6agSHryBw6RANihybnB9FgQMdD_e1rsEV/exec" method="POST">
-<input type="hidden" name="_subject" value="New Load Submission" />
-<input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
 <!-- Trip Info -->
 <fieldset>
 <legend>Trip Info</legend>
 <div class="grid">
-<div><label>Name</label><input name="Name" /></div>
-<div><label>Date Loading</label><input type="date" name="Date Loading" /></div>
-<div><label>Trip #</label><input name="Trip Number" /></div>
-<div><label>Origin</label><input name="Origin" /></div>
-<div><label>Destination</label><input name="Destination" /></div>
+<div>
+<label>Trip # <span class="req">*</span></label>
+<input name="Trip Number" required />
+</div>
+
+<div>
+<label>Date Loading <span class="req">*</span></label>
+<input type="date" name="Date Loading" required />
+</div>
+
+<div>
+<label>Origin <span class="req">*</span></label>
+<input name="Origin" required />
+</div>
+
+<div>
+<label>Destination <span class="req">*</span></label>
+<input name="Destination" required />
+</div>
+
+<div>
+<label>Name</label>
+<input name="Name" />
+</div>
 </div>
 </fieldset>
 
@@ -46,51 +63,66 @@ button:hover { opacity: .9; }
 <fieldset>
 <legend>Load Info</legend>
 <div class="grid grid-4">
-<div><label>Load Make</label><input name="Load Make" /></div>
-<div><label>Load Model</label><input name="Load Model" /></div>
-<div><label>Serial Number</label><input name="Serial Number" /></div>
+<div>
+<label>Load Make <span class="req">*</span></label>
+<input name="Load Make" required />
 </div>
-<label>Load Description</label>
-<textarea name="Load Description"></textarea>
+
+<div>
+<label>Load Model <span class="req">*</span></label>
+<input name="Load Model" required />
+</div>
+
+<div>
+<label>Serial Number <span class="req">*</span></label>
+<input name="Serial Number" required />
+</div>
+</div>
+
+<label>Load Description <span class="req">*</span></label>
+<textarea name="Load Description" required></textarea>
 </fieldset>
 
 <!-- Load Dimensions -->
 <fieldset>
-  <legend>Load Dimensions</legend>
-  <div class="grid grid-4">
+<legend>Load Dimensions</legend>
+<div class="grid grid-4">
 
-    <div>
-      <label>Overall Length <span class="req">*</span></label>
-      <input name="Overall Length" required pattern="^\d{1,4}(-\d{1,2})?$" />
-    </div>
+<div>
+<label>Overall Length <span class="req">*</span></label>
+<input name="Overall Length" required pattern="^\d{1,4}(-\d{1,2})?$" />
+</div>
 
-    <div>
-      <label>Trailer Length</label>
-      <input name="Trailer Length" pattern="^\d{1,4}(-\d{1,2})?$" />
-    </div>
+<div>
+<label>Trailer Length</label>
+<input name="Trailer Length" pattern="^\d{1,4}(-\d{1,2})?$" />
+</div>
 
-    <div>
-      <label>Overall Width <span class="req">*</span></label>
-      <input name="Overall Width" required pattern="^\d{1,4}(-\d{1,2})?$" />
-    </div>
+<div>
+<label>Overall Width <span class="req">*</span></label>
+<input name="Overall Width" required pattern="^\d{1,4}(-\d{1,2})?$" />
+</div>
 
-    <div>
-      <label>Overall Height <span class="req">*</span></label>
-      <input name="Overall Height" required pattern="^\d{1,4}(-\d{1,2})?$" />
-    </div>
+<div>
+<label>Overall Height <span class="req">*</span></label>
+<input name="Overall Height" required pattern="^\d{1,4}(-\d{1,2})?$" />
+</div>
 
-  </div>
+</div>
 </fieldset>
 
 <!-- Truck -->
 <fieldset>
 <legend>Truck</legend>
 <div class="grid grid-4">
-<div><label>Truck Number <span class="req">*</span></label><input name="Truck Number" required /></div>
+<div>
+<label>Truck Number <span class="req">*</span></label>
+<input name="Truck Number" required />
+</div>
 <div><label>Truck Year</label><input name="Truck Year" /></div>
 <div><label>Truck Make</label><input name="Truck Make" /></div>
 <div><label>Truck License</label><input name="Truck License" /></div>
-<div><label>Truck VIN</label><input name="Truck VIN" minlength="17" maxlength="17" pattern="[A-HJ-NPR-Z0-9]{17}" /></div>
+<div><label>Truck VIN</label><input name="Truck VIN" /></div>
 </div>
 </fieldset>
 
@@ -102,7 +134,7 @@ button:hover { opacity: .9; }
 <div><label>Jeep Year</label><input name="Jeep Year" /></div>
 <div><label>Jeep Make</label><input name="Jeep Make" /></div>
 <div><label>Jeep License</label><input name="Jeep License" /></div>
-<div><label>Jeep VIN</label><input name="Jeep VIN" minlength="17" maxlength="17" pattern="[A-HJ-NPR-Z0-9]{17}" /></div>
+<div><label>Jeep VIN</label><input name="Jeep VIN" /></div>
 </div>
 </fieldset>
 
@@ -110,11 +142,14 @@ button:hover { opacity: .9; }
 <fieldset>
 <legend>Trailer</legend>
 <div class="grid grid-4">
-<div><label>Trailer Number <span class="req">*</span></label><input name="Trailer Number" required /></div>
+<div>
+<label>Trailer Number <span class="req">*</span></label>
+<input name="Trailer Number" required />
+</div>
 <div><label>Trailer Year</label><input name="Trailer Year" /></div>
 <div><label>Trailer Make</label><input name="Trailer Make" /></div>
 <div><label>Trailer License</label><input name="Trailer License" /></div>
-<div><label>Trailer VIN</label><input name="Trailer VIN" minlength="17" maxlength="17" pattern="[A-HJ-NPR-Z0-9]{17}" /></div>
+<div><label>Trailer VIN</label><input name="Trailer VIN" /></div>
 </div>
 </fieldset>
 
@@ -126,7 +161,7 @@ button:hover { opacity: .9; }
 <div><label>Booster Year</label><input name="Booster Year" /></div>
 <div><label>Booster Make</label><input name="Booster Make" /></div>
 <div><label>Booster License</label><input name="Booster License" /></div>
-<div><label>Booster VIN</label><input name="Booster VIN" minlength="17" maxlength="17" pattern="[A-HJ-NPR-Z0-9]{17}" /></div>
+<div><label>Booster VIN</label><input name="Booster VIN" /></div>
 </div>
 </fieldset>
 
@@ -134,16 +169,19 @@ button:hover { opacity: .9; }
 <fieldset>
 <legend>Axle Spacings</legend>
 <div class="grid">
-<div><label>1-2</label><input name="1-2" pattern="^\d{1,4}(-\d{1,2})?$" /></div>
-<div><label>2-3</label><input name="2-3" pattern="^\d{1,4}(-\d{1,2})?$" /></div>
-<div><label>3-4</label><input name="3-4" pattern="^\d{1,4}(-\d{1,2})?$" /></div>
-<div><label>4-5</label><input name="4-5" pattern="^\d{1,4}(-\d{1,2})?$" /></div>
+
+<div><label>1-2 <span class="req">*</span></label><input name="1-2" required pattern="^\d{1,4}(-\d{1,2})?$" /></div>
+<div><label>2-3 <span class="req">*</span></label><input name="2-3" required pattern="^\d{1,4}(-\d{1,2})?$" /></div>
+<div><label>3-4 <span class="req">*</span></label><input name="3-4" required pattern="^\d{1,4}(-\d{1,2})?$" /></div>
+<div><label>4-5 <span class="req">*</span></label><input name="4-5" required pattern="^\d{1,4}(-\d{1,2})?$" /></div>
+
 <div><label>5-6</label><input name="5-6" pattern="^\d{1,4}(-\d{1,2})?$" /></div>
 <div><label>6-7</label><input name="6-7" pattern="^\d{1,4}(-\d{1,2})?$" /></div>
 <div><label>7-8</label><input name="7-8" pattern="^\d{1,4}(-\d{1,2})?$" /></div>
 <div><label>8-9</label><input name="8-9" pattern="^\d{1,4}(-\d{1,2})?$" /></div>
 <div><label>9-10</label><input name="9-10" pattern="^\d{1,4}(-\d{1,2})?$" /></div>
 <div><label>10-11</label><input name="10-11" pattern="^\d{1,4}(-\d{1,2})?$" /></div>
+
 </div>
 </fieldset>
 
@@ -151,7 +189,5 @@ button:hover { opacity: .9; }
 
 </form>
 
-</body>
-</html>
 </body>
 </html>
